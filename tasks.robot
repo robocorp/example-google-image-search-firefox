@@ -8,7 +8,8 @@ ${SEARCH_TERM}    cute cat picture
 
 *** Keywords ***
 Accept Google Consent
-    Click Element    xpath://button/div[contains(text(), 'I agree')]
+    #Click Element    xpath://button/div[contains(text(), 'I agree')]
+    Click Element    alias:AgreeButton
 
 *** Keywords ***
 Open Google search page
