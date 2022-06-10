@@ -10,11 +10,11 @@ dependencies:
   - python=3.7.5
 
   # Load Firefox and corresponding driver from conda-forge.
-  - firefox=98.0.2 # https://anaconda.org/conda-forge/firefox
+  - firefox=100.0.2 # https://anaconda.org/conda-forge/firefox
   - geckodriver=0.30.0 # https://anaconda.org/conda-forge/geckodriver
 
   - pip=20.1
   - pip:
       # Define pip packages here.
       # https://pypi.org/
-      - rpaframework==13.0.3 # https://rpaframework.org/releasenotes.html
+      - rpaframework==15.0.0 # https://rpaframework.org/releasenotes.html
