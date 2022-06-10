@@ -8,7 +8,6 @@ ${SEARCH_TERM}    cute cat picture
 
 *** Keywords ***
 Accept Google Consent
-    #Click Element    xpath://button/div[contains(text(), 'I agree')]
     Click Element    alias:AgreeButton
 
 *** Keywords ***
@@ -17,7 +16,7 @@ Open Google search page
     ...    ${GOOGLE_URL}
     ...    browser_selection=firefox
     ...    headless=True
-    Run Keyword And Ignore Error    Accept Google Consent
+    Accept Google Consent
 
 *** Keywords ***
 Search for
@@ -36,8 +35,13 @@ Screenshot first result
 
 *** Tasks ***
 Execute Google image search and store the first result image
-    Open Google search page
-    Search for    ${SEARCH_TERM}
-    View image search results
-    Screenshot first result
+    TRY
+        Open Google search page
+        Search for    ${SEARCH_TERM}
+        View image search results
+        Screenshot first result
+    EXCEPT
+        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png 
+        Fail    Checkout the screenshot: error.png
+    END
     [Teardown]    Close Browser
