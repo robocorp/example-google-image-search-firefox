@@ -8,7 +8,10 @@ ${SEARCH_TERM}    cute cat picture
 
 *** Keywords ***
 Accept Google Consent
-    Click Element    alias:AgreeButton
+    Click Element If Visible    alias:AgreeButton
+
+Close Google Sign in if shown
+    Click Element If Visible    No thanks
 
 *** Keywords ***
 Open Google search page
@@ -16,6 +19,7 @@ Open Google search page
     ...    ${GOOGLE_URL}
     ...    browser_selection=firefox
     ...    headless=True
+    Close Google Sign in if shown
     Accept Google Consent
 
 *** Keywords ***
