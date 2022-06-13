@@ -37,6 +37,10 @@ Screenshot first result
 Execute Google image search and store the first result image
     TRY
         Open Google search page
+        ${containsSignin}=    Does Page Contain Button    No thanks
+        IF    ${containsSignin} == True
+            Click Button    No thanks
+        END
         Search for    ${SEARCH_TERM}
         View image search results
         Screenshot first result
