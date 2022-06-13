@@ -10,12 +10,16 @@ ${SEARCH_TERM}    cute cat picture
 Accept Google Consent
     Click Element    alias:AgreeButton
 
+Close Google Sign in if shown
+    Click Element If Visible    No thanks
+
 *** Keywords ***
 Open Google search page
     Open Available Browser
     ...    ${GOOGLE_URL}
     ...    browser_selection=firefox
     ...    headless=True
+    Close Google Sign in if shown
     Accept Google Consent
 
 *** Keywords ***
@@ -37,10 +41,6 @@ Screenshot first result
 Execute Google image search and store the first result image
     TRY
         Open Google search page
-        ${containsSignin}=    Does Page Contain Button    No thanks
-        IF    ${containsSignin} == True
-            Click Button    No thanks
-        END
         Search for    ${SEARCH_TERM}
         View image search results
         Screenshot first result
