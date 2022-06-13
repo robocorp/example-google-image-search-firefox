@@ -8,7 +8,7 @@ ${SEARCH_TERM}    cute cat picture
 
 *** Keywords ***
 Accept Google Consent
-    Click Element    alias:AgreeButton
+    Click Element If Visible    alias:AgreeButton
 
 Close Google Sign in if shown
     Click Element If Visible    No thanks
