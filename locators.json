@@ -1,9 +1,0 @@
-{
-    "AgreeButton": {
-        "screenshot": ".images\\agreebutton-screenshot.png",
-        "source": "https://www.google.com/?hl=en",
-        "strategy": "xpath",
-        "type": "browser",
-        "value": "//button[2]/div"
-    }
-}
