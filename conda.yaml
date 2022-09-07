@@ -7,14 +7,13 @@ dependencies:
   # If available, always prefer the conda version of a package.
   # Installation will be faster and more efficient.
   # https://anaconda.org/search
-  - python=3.7.5
+  - python=3.9.13
 
   # Load Firefox and corresponding driver from conda-forge.
-  - firefox=100.0.2 # https://anaconda.org/conda-forge/firefox
-  - geckodriver=0.30.0 # https://anaconda.org/conda-forge/geckodriver
+  - firefox=104.0 # https://anaconda.org/conda-forge/firefox
 
-  - pip=20.1
+  - pip=22.1.2
   - pip:
       # Define pip packages here.
       # https://pypi.org/
-      - rpaframework==15.0.0 # https://rpaframework.org/releasenotes.html
+      - rpaframework==16.3.0 # https://rpaframework.org/releasenotes.html
