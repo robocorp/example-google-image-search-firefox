@@ -9,7 +9,7 @@ dependencies:
   # https://anaconda.org/search
   - python=3.9.13            # https://pyreadiness.org/3.9/ 
 
-  # Load Firefox and corresponding driver from conda-forge.
+  # Load Firefox from conda-forge.
   - firefox=113.0            # https://anaconda.org/conda-forge/firefox
 
   - pip=22.3.1               # https://pip.pypa.io/en/stable/news/
