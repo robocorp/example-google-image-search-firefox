@@ -11,7 +11,7 @@ dependencies:
 
   # Load Firefox from conda-forge.
   - firefox=114.0            # https://anaconda.org/conda-forge/firefox
-
+  - geckodriver=0.33.0       # https://anaconda.org/conda-forge/geckodriver
   - pip=22.3.1               # https://pip.pypa.io/en/stable/news/
   - pip:
       # Define pip packages here.
