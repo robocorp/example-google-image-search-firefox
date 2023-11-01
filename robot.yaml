@@ -4,8 +4,6 @@
 tasks:
   Image search with Firefox:
     robotTaskName: Execute Google image search and store the first result image
-  Debug image search with Firefox:
-    shell: python -m robot -L TRACE --outputdir output --logtitle "Task log" tasks.robot
 
 environmentConfigs:
   - environment_windows_amd64_freeze.yaml
