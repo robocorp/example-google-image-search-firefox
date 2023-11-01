@@ -1,10 +1,13 @@
 *** Settings ***
 Documentation     Executes Google image search and stores the first result image.
+
 Library           RPA.Browser.Selenium
+
 
 *** Variables ***
 ${GOOGLE_URL}     https://google.com/?hl=en
-${SEARCH_TERM}    cute cat picture
+${SEARCH_TERM}    cute monkey picture
+
 
 *** Keywords ***
 Reject Google Cookies
@@ -16,7 +19,6 @@ Accept Google Consent
 Close Google Sign in if shown
     Click Element If Visible    No thanks
 
-*** Keywords ***
 Open Google search page
     Open Available Browser
     ...    ${GOOGLE_URL}
@@ -26,20 +28,18 @@ Open Google search page
     Reject Google Cookies
     Accept Google Consent
 
-*** Keywords ***
 Search for
     [Arguments]    ${text}
     Input Text    name:q    ${text}
     Press Keys    name:q    ENTER
     Wait Until Page Contains Element    search
 
-*** Keywords ***
 View image search results
     Click Link    Images
 
-*** Keywords ***
 Screenshot first result
     Capture Element Screenshot    css:div[data-ri="0"]
+
 
 *** Tasks ***
 Execute Google image search and store the first result image
@@ -49,7 +49,7 @@ Execute Google image search and store the first result image
         View image search results
         Screenshot first result
     EXCEPT
-        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png 
+        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png
         Fail    Checkout the screenshot: error.png
     END
     [Teardown]    Close Browser
